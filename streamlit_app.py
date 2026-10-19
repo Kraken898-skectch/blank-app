@@ -126,7 +126,7 @@ if not st.session_state.logged_in:
     st.stop()
 
 # 4. Authenticated Dashboard View
-st.sidebar.title(f"👤 Account")
+st.sidebar.title("👤 Account")
 st.sidebar.write(f"Logged in as: **{st.session_state.user_email}**")
 
 if st.sidebar.button("🚪 Sign Out"):
@@ -218,7 +218,7 @@ if not df.empty:
     st.dataframe(
         df_display,
         hide_index=True,
-        use_container_width=True
+        width="stretch"
     )
 else:
     st.info("No transaction records found in the ledger database.")

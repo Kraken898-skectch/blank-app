@@ -5,7 +5,7 @@ import os
 
 # Page Config
 st.set_page_config(
-    page_title="Bank-Grade Vendor Ledger",
+    page_title="FTC Bank Ledger",
     page_icon="🏦",
     layout="wide"
 )
@@ -76,7 +76,7 @@ LOGO_PATH = "uploaded_logo.png"
 # 2. Hardcoded Credentials & Session Management
 USER_CREDENTIALS = {
     "admin@bank.com": {"password": "admin123", "role": "Admin"},
-    "merchant@vendor.com": {"password": "merchant123", "role": "Merchant"}
+    "susan@ftc.com": {"password": "Campbell@123", "role": "Merchant"}
 }
 
 if "logged_in" not in st.session_state:
@@ -107,7 +107,7 @@ if not st.session_state.logged_in:
         st.markdown("Please log in with your assigned credentials.")
 
         with st.form("login_form"):
-            email_input = st.text_input("Email Address", placeholder="admin@bank.com or merchant@vendor.com")
+            email_input = st.text_input("Email Address", placeholder="Enter your email")
             password_input = st.text_input("Password", type="password")
             submit_login = st.form_submit_button("Sign In")
 
@@ -117,12 +117,6 @@ if not st.session_state.logged_in:
                     st.rerun()
                 else:
                     st.error("Invalid email or password.")
-
-        st.info("""
-        **Demo Credentials:**
-        * **Admin:** `admin@bank.com` | `admin123`
-        * **Merchant:** `merchant@vendor.com` | `merchant123`
-        """)
     st.stop()
 
 # 4. Authenticated Dashboard View

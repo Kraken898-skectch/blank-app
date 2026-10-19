@@ -148,7 +148,7 @@ with col_logo:
         st.markdown("### 🏦 **BANK LOGO**")
 
 with col_title:
-    st.title("Commercial Vendor Ledger")
+    st.title("Deposit Ledger")
     if st.session_state.role == "Admin":
         st.markdown('<span class="role-badge admin-badge">● ADMIN ACCESS - EDIT MODE ENABLED</span>', unsafe_allow_html=True)
     else:
